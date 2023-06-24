@@ -1,0 +1,199 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body 
+{
+    height: 100vh;
+    width: 100vw;
+	font-family: sans-serif;
+}
+
+@media (max-width: 992px)
+{
+	.logo
+	{
+		width: 147px;
+		height: auto;
+	}
+	.bird
+	{
+		width: 52px;
+		height: auto;
+	}
+}
+
+.game_title
+{
+	position: fixed;
+    top: 10vh;
+	width: 100vw;
+    text-align: center;
+	z-index: 98;
+}
+  
+.background 
+{
+    height: 100vh;
+    width: 100vw;
+    background: url("../images/background.png");
+}
+
+.bird 
+{
+    position: fixed;
+    top: 45vh;
+    left: 5vw;
+    z-index: 99;
+}
+
+.pipe_sprite
+{
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    width: 90px;
+	height: 70vh;
+    background: url("../images/pipe.png");
+}
+
+.tap_image 
+{
+    position: fixed;
+    top: 60vh;
+	width: 100vw;
+	height: 100vh;
+    text-align: center;
+	z-index: 11;
+}
+
+.message 
+{
+    position: fixed;
+    z-index: 10;
+    height: 10vh;
+    font-size: 3vh;
+    font-weight: normal;
+    color: white;
+    top: 75vh;
+	width: 100vw;
+    text-align: center;
+}
+  
+.scoreHolder 
+{
+    position: fixed;
+    z-index: 9;
+    height: 10vh;
+    font-size: 2vh;
+    font-weight: normal;
+    color: white;
+    top: 7vh;
+    left: 12vw;
+}
+  
+.score
+{	
+	position: fixed;
+    font-weight: 700;
+    color: white;
+    font-size: 7vh;
+}
+
+.form_holder 
+{
+	display : none;
+    position: fixed;
+    z-index: 100;
+    font-size: 5vh;
+    font-weight: normal;
+    color: white;
+    top: -1vh;
+	height: 101vh;
+	width: 100vw;
+	padding-top: 30vh;
+    text-align: center;
+	background: url("../images/form-background.png");
+}
+
+.highscores
+{
+	display : none;
+	position: fixed;
+    top: 25vh;
+	width: 100vw;
+	height: 100vh;
+	z-index: 101;
+	background-repeat: no-repeat;
+	background-position: center 0vh;
+}
+
+.highscores button
+{
+	width: 200px;
+	background-color: #fff;
+	color: orange;
+}
+
+.highscores button:hover
+{
+	background-color: orange;
+	color: white;
+}
+
+table
+{
+    color: white;
+    top: 30vh;
+	width: 252px;
+	height: 52vh;
+    text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	backdrop-filter: blur(10px);
+	border: 1px #ccc solid;
+	border-radius: 0.5em;
+	box-shadow: 0px 0px 8px #555;
+	padding: 10px 3px;
+}
+
+thead
+{
+    font-size: 5vh;
+    font-weight: 550;
+    text-align: center;
+}
+
+#phone-error, #fullname-error
+{
+    font-size: 3vh;
+    color: #c55357;
+}
+
+input
+{
+	width: 330px;
+	padding: 15px 8px;
+	margin-top: 12px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+button
+{
+	width: 330px;
+	background-color: #5EB517;
+	color: white;
+	padding: 18px 8px 18px 8px;
+	margin-top: 12px;
+	border: none;
+	border-radius: 25px;
+}
+
+#server_response
+{
+	width: 100vw;
+    text-align: center;
+}
