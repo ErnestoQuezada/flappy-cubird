@@ -47,7 +47,6 @@ $(document).ready(function ()
 			
 			$.ajax({
 				type: "POST",
-				//url: "https://tienda.movistar.com.sv/game/foo/request_handler.php",
 				url: "http://localhost/flappy-cubird/request_handler.php",
 				data: formData,
 				dataType: "json",

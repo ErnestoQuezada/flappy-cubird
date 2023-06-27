@@ -2,8 +2,7 @@ let score = 0;
 let gravity = 0.5;
 let move_speed = 3;
 let game_state = 'Start';
-let local_request_handler_url = 'http://localhost/flappy-cubird/request_handler.php';
-let handler = local_request_handler_url;
+let handler = 'http://localhost/flappy-cubird/request_handler.php';
 
 let bird = document.querySelector('.bird');
 let bird_props = bird.getBoundingClientRect();
@@ -39,7 +38,7 @@ var params = parseQueryString(scriptSource().split('?')[1]);
 
 document.addEventListener('click', (e) => 
 {
-	if (game_state == 'show_leaderboard')
+	if (game_state == 'get_invoice')
 	{
 		let playAgain = document.querySelector('.play_again');
 		if (isEventInElement(e, playAgain))
@@ -123,36 +122,19 @@ function move()
 
 function gameOver()
 {
-	game_state = 'show_leaderboard';
+	game_state = 'get_invoice';
 	
-	
-	
-	
-	document.querySelector('#table_body').innerHTML = '<tr><th>ENVIAR</th><th>' + score + ' SATS</th></tr>';
-	$('.highscores').show();
-	
-	
-	
-	
-	/**
 	$.post(handler,
 	{
+		getInvoice: true,
 		score: score,
 		chat_id: params.chat_id
 	},
 	function(data, status)
 	{
-		$.post(handler,
-		{
-			getScores: true
-		},
-		function(data, status)
-		{
-			populateHighscores(data);
-			$('.highscores').show();
-		});
+		populateInvoice(data);
+		$('.highscores').show();
 	});
-	**/
 }
 
 let bird_dy = 0;
@@ -214,18 +196,19 @@ function play()
 	requestAnimationFrame(apply_gravity);
 }
 
-function populateHighscores(data)
+function populateInvoice(data)
 {
-	var topScores = JSON.parse(data);
+	document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
+	/**
+	var invoice = JSON.parse(data);
 	document.querySelector('#table_body').innerHTML = '<tr><th>JUGADOR</th><th>SCORE</th></tr>';
-	var dataLength = (topScores.scores) ? topScores.scores.length : 0;
+	var dataLength = (invoice) ? invoice.length : 0;
 	for (var i = 0; i < dataLength; i++)
 	{
-		var name = topScores.scores[i].name.split(' ');
-		document.querySelector('#table_body').innerHTML += ('<tr><td>' + 
-				name[0] + '</td><td>' +
-				topScores.scores[i].score + '</td></tr>');
+		document.querySelector('#table_body').innerHTML += ('<tr><td>' +
+				invoice[i] + '</td></tr>');
 	}
+	**/
 }
 
 function isEventInElement(event, element)
