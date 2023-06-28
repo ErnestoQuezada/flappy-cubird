@@ -12,6 +12,8 @@ let scoreString = document.querySelector('.score');
 let score_title = document.querySelector('#score_title');
 let background = document.querySelector('.background').getBoundingClientRect();
 
+var invoice = '';
+
 // manuel3g
 //var nombre = document.getElementById("nombre_usuario").innerText;
 //var puerto = document.getElementById("puerto").innerText;
@@ -125,7 +127,8 @@ function gameOver()
 	},
 	function(data, status)
 	{
-		populateInvoice(data);
+		invoice = data;
+		document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ invoice +'</textarea></td></tr>';
 		$('.highscores').show();
 	});
 }
@@ -204,9 +207,17 @@ function play()
 	requestAnimationFrame(apply_gravity);
 }
 
-function populateInvoice(data)
+function payInvoice()
 {
-	document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ data +'</textarea></td></tr>';
+	$.post(handler,
+	{
+		payInvoice: true,
+		invoice: invoice
+	},
+	function(data, status)
+	{
+		document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ data +'</textarea></td></tr>';
+	});
 }
 
 function isEventInElement(event, element)
