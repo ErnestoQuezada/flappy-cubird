@@ -12,6 +12,11 @@ let scoreString = document.querySelector('.score');
 let score_title = document.querySelector('#score_title');
 let background = document.querySelector('.background').getBoundingClientRect();
 
+// manuel3g
+var nombre = document.getElementById("nombre_usuario").innerText;
+var puerto = document.getElementById("puerto").innerText;
+// manuel3g
+
 document.addEventListener('click', (e) => 
 {
 	if (game_state == 'get_invoice')
@@ -44,7 +49,11 @@ function initGame(e)
 	bird.style.top = '40vh';
 	game_state = 'Play';
 	message.innerHTML = '';
-	score_title.innerHTML = 'SCORE';
+
+	//manuel3g
+	score_title.innerHTML = 'SCORE | '+ nombre + ' / ' + puerto;
+	//manuel3g
+	
 	scoreString.innerHTML = score;
 	play();
 }
@@ -104,8 +113,8 @@ function gameOver()
 	{
 		getInvoice: true,
 		score: score,
-		port: '8082',
-		player: 'bob'
+		port: puerto,
+		player: nombre
 	},
 	function(data, status)
 	{
