@@ -175,7 +175,7 @@ function play()
 
 function populateInvoice(data)
 {
-	document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
+	document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ data +'</textarea></td></tr>';
 }
 
 function isEventInElement(event, element)
