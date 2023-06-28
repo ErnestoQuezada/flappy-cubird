@@ -46,6 +46,11 @@
 						Show QR
 					</button>
 				  </td>
+				  <td>
+					<button class="play_again" id="payInvoice">
+						Pay invoice
+					</button>
+				  </td>
 				</tr>
 			  </tfoot>
 			</table>

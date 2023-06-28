@@ -14,6 +14,7 @@ let background = document.querySelector('.background').getBoundingClientRect();
 
 var invoice = '';
 
+$('#payInvoice').hide();
 // manuel3g
 //var nombre = document.getElementById("nombre_usuario").innerText;
 //var puerto = document.getElementById("puerto").innerText;
@@ -26,6 +27,8 @@ document.addEventListener('click', (e) =>
 		let playAgain = document.querySelector('#playAgain');
 		if (isEventInElement(e, playAgain))
 		{
+			$('#showQRcode').show();
+			$('#payInvoice').hide();
 			$('.highscores').hide();
 			initGame(e);
 		}
@@ -151,7 +154,9 @@ function showQRcode(e)
 	function(data, status)
 	{
 		document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
-		document.querySelector('#table_foot').innerHTML = '<tr><td><button class="play_again" id="payInvoice">Pay invoice</button></td></tr>';
+		
+		$('#showQRcode').hide();
+		$('#payInvoice').show();
 	});
 }
 
@@ -217,6 +222,7 @@ function play()
 function payInvoice(e)
 {
 	alert('Invoice paid');
+	/*
 	$.post(handler,
 	{
 		payInvoice: true,
@@ -227,6 +233,7 @@ function payInvoice(e)
 		document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ data +'</textarea></td></tr>';
 		document.querySelector('#table_foot').innerHTML = '';
 	});
+	*/
 }
 
 function isEventInElement(event, element)
