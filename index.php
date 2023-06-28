@@ -33,15 +33,24 @@
 			<table>
 				<thead>
 					<tr>
-						<th colspan="2">CALL POLAR API</th>
+						<th colspan="2">Invoice</th>
 					</tr>
 				</thead>
 				<tbody id="table_body">
 					
 				</tbody>
+				<tfoot>
+				<tr>
+				  <td>
+					<button class="play_again" id="showQRcode">
+						Show QR
+					</button>
+				  </td>
+				</tr>
+			  </tfoot>
 			</table>
 			<center>
-				<button class="play_again">
+				<button class="play_again" id="playAgain">>
 					Play again
 				</button>
 			</center>

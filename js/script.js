@@ -21,11 +21,17 @@ document.addEventListener('click', (e) =>
 {
 	if (game_state == 'get_invoice')
 	{
-		let playAgain = document.querySelector('.play_again');
+		let playAgain = document.querySelector('#playAgain');
 		if (isEventInElement(e, playAgain))
 		{
 			$('.highscores').hide();
 			initGame(e);
+		}
+		
+		let getQRcode = document.querySelector('#showQRcode')
+		if (isEventInElement(e, getQRcode))
+		{
+			showQRcode(e);
 		}
 	}
 	else if (game_state != 'Play')
@@ -114,13 +120,28 @@ function gameOver()
 	{
 		getInvoice: true,
 		score: score,
-		port: '8081',
+		port: '8082',
 		player: 'bob'
 	},
 	function(data, status)
 	{
 		populateInvoice(data);
 		$('.highscores').show();
+	});
+}
+
+function showQRcode(e)
+{	
+	$.post(handler,
+	{
+		showQRcode: true,
+		score: score,
+		port: '8082',
+		player: 'bob'
+	},
+	function(data, status)
+	{
+		document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
 	});
 }
 
