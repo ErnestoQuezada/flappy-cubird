@@ -13,8 +13,8 @@ let score_title = document.querySelector('#score_title');
 let background = document.querySelector('.background').getBoundingClientRect();
 
 // manuel3g
-var nombre = document.getElementById("nombre_usuario").innerText;
-var puerto = document.getElementById("puerto").innerText;
+//var nombre = document.getElementById("nombre_usuario").innerText;
+//var puerto = document.getElementById("puerto").innerText;
 // manuel3g
 
 document.addEventListener('click', (e) => 
@@ -51,7 +51,8 @@ function initGame(e)
 	message.innerHTML = '';
 
 	//manuel3g
-	score_title.innerHTML = 'SCORE | '+ nombre + ' / ' + puerto;
+	//score_title.innerHTML = 'SCORE | '+ nombre + ' / ' + puerto;
+	score_title.innerHTML = 'SCORE';
 	//manuel3g
 	
 	scoreString.innerHTML = score;
@@ -113,8 +114,8 @@ function gameOver()
 	{
 		getInvoice: true,
 		score: score,
-		port: puerto,
-		player: nombre
+		port: '8081',
+		player: 'bob'
 	},
 	function(data, status)
 	{
