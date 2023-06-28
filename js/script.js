@@ -222,6 +222,7 @@ function play()
 function payInvoice(e)
 {
 	alert('Invoice paid');
+	document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">paying invoice...</textarea></td></tr>';
 	/*
 	$.post(handler,
 	{
