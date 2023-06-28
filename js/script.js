@@ -35,6 +35,12 @@ document.addEventListener('click', (e) =>
 		{
 			showQRcode(e);
 		}
+		
+		let payInvoice = document.querySelector('#payInvoice')
+		if (isEventInElement(e, payInvoice))
+		{
+			payInvoice(e);
+		} 
 	}
 	else if (game_state != 'Play')
 	{
@@ -145,6 +151,7 @@ function showQRcode(e)
 	function(data, status)
 	{
 		document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
+		document.querySelector('#table_foot').innerHTML = '<tr><td><button class="play_again" id="payInvoice">Pay invoice</button></td></tr>';
 	});
 }
 
@@ -207,8 +214,9 @@ function play()
 	requestAnimationFrame(apply_gravity);
 }
 
-function payInvoice()
+function payInvoice(e)
 {
+	alert('Invoice paid');
 	$.post(handler,
 	{
 		payInvoice: true,
@@ -217,6 +225,7 @@ function payInvoice()
 	function(data, status)
 	{
 		document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ data +'</textarea></td></tr>';
+		document.querySelector('#table_foot').innerHTML = '';
 	});
 }
 

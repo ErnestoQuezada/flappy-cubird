@@ -39,7 +39,7 @@
 				<tbody id="table_body">
 					
 				</tbody>
-				<tfoot>
+				<tfoot id="table_foot">
 				<tr>
 				  <td>
 					<button class="play_again" id="showQRcode">
