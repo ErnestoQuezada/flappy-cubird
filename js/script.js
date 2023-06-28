@@ -12,30 +12,6 @@ let scoreString = document.querySelector('.score');
 let score_title = document.querySelector('#score_title');
 let background = document.querySelector('.background').getBoundingClientRect();
 
-// --- get Chat_ID from php  ---
-function scriptSource() 
-{
-    var scripts = document.getElementsByTagName('script');
-    return scripts[scripts.length - 1].src;
-}
-
-function parseQueryString(queryString) 
-{
-    var params = {};
-    if (queryString)
-	{
-        var keyValues = queryString.split('&');
-        for (var i = 0; i < keyValues.length; i++) 
-		{
-            var pair = keyValues[i].split('=');
-            params[pair[0]] = pair[1];
-        }
-    }
-    return params;
-}
-
-var params = parseQueryString(scriptSource().split('?')[1]);
-
 document.addEventListener('click', (e) => 
 {
 	if (game_state == 'get_invoice')
@@ -47,7 +23,7 @@ document.addEventListener('click', (e) =>
 			initGame(e);
 		}
 	}
-	else if (game_state != 'Play' && $('.form_holder').is(":hidden"))
+	else if (game_state != 'Play')
 	{
 		initGame(e);
 	}
@@ -73,7 +49,7 @@ function initGame(e)
 	play();
 }
 
-function move() 
+function move()
 {
 	if (game_state != 'Play') return;
 
@@ -128,7 +104,8 @@ function gameOver()
 	{
 		getInvoice: true,
 		score: score,
-		chat_id: params.chat_id
+		port: '8082',
+		player: 'bob'
 	},
 	function(data, status)
 	{
@@ -199,16 +176,6 @@ function play()
 function populateInvoice(data)
 {
 	document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
-	/**
-	var invoice = JSON.parse(data);
-	document.querySelector('#table_body').innerHTML = '<tr><th>JUGADOR</th><th>SCORE</th></tr>';
-	var dataLength = (invoice) ? invoice.length : 0;
-	for (var i = 0; i < dataLength; i++)
-	{
-		document.querySelector('#table_body').innerHTML += ('<tr><td>' +
-				invoice[i] + '</td></tr>');
-	}
-	**/
 }
 
 function isEventInElement(event, element)

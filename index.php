@@ -23,7 +23,7 @@
 			<img class="tap" src="images/tap.png" alt="bird-img">
 		</div>
 		<div class="message">
-			Tap para iniciar el juego
+			Tap to start the game
 		</div>
 		<div class="scoreHolder">
 			<div id="score_title"></div>
@@ -33,7 +33,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th colspan="2">LLAMAR POLAR API</th>
+						<th colspan="2">CALL POLAR API</th>
 					</tr>
 				</thead>
 				<tbody id="table_body">
@@ -42,32 +42,11 @@
 			</table>
 			<center>
 				<button class="play_again">
-					¡Volver a jugar!
+					Play again
 				</button>
 			</center>
 		</div>
-		<script src="js/script.js?chat_id=<?php echo $_GET["chat_id"] ?>"></script>
+		<script src="js/script.js"></script>
 	</div>
-	<div class="form_holder">
-		<div id="server_response">Ingresa tus datos<br>para iniciar el juego</div>
-		<form action="request_handler.php" method="post">
-			<input type="hidden" name="chat_id" id="chat_id" value="<?php echo $_GET["chat_id"] ?>" />
-			<input type="text" name="fullname" id="fullname" maxlength="100" placeholder="Nombre completo" required><br>
-			<input type="tel" name="phone" id="phone" maxlength="8" placeholder="Teléfono" required><br>
-			<button type="submit">
-				¡Jugar ahora!
-			</button>
-		</form>
-	</div>
-	<?php
-		if ($_GET['isAllowed'] != "true")
-		{
-			echo '
-			<style type="text/css">.form_holder{
-				display: block;
-			}</style>
-			';
-		}
-	?>
 </body>
 </html>
