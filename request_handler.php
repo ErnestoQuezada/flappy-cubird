@@ -6,13 +6,14 @@
 	if (isset($_POST['getInvoice']))
 	{
 		$score = $_POST['score'];
+		$port = $_POST['port'];
+		$player = $_POST['player'];
 
 		$lnd = new lnd();
-		$lnd->setHost('127.0.0.1:8082');
-		$lnd->loadMacaroon('/home/acreonte/.polar/networks/1/volumes/lnd/bob/data/chain/bitcoin/regtest/admin.macaroon');
+		$lnd->setHost('127.0.0.1:' . $port);
+		$lnd->loadMacaroon('/home/acreonte/.polar/networks/1/volumes/lnd/'.$player.'/data/chain/bitcoin/regtest/admin.macaroon');
 
-		$invoiceOptions = array("memo"	=> "Flappy Cubird Winner",
-					"value"	=> $score);
+		$invoiceOptions = array("memo" => "Flappy Cubird Winner", "value" => $score);
 
 		try
 		{
