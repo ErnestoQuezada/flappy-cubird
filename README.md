@@ -1,7 +1,13 @@
 # flappy-cubird
 
-Initialize by calling http://localhost/index.php?isAllowed=true&chat_id=1
+This example runs on a local Ubuntu environment.
 
-isAllowed has to be set to true
+1. Install LAMP (or at least have a running Apache server and PHP server).
 
-chat_id can be any number (originally it comes from Telegram)
+2. Install Docker https://docs.docker.com/engine/install/ubuntu/
+
+3. Install Polar https://docs.lightning.engineering/lapps/guides/polar-lapps/local-cluster-setup-with-polar
+
+4. Follow the instructions on the link above to setup the Polar environment.
+
+5. Run from localhost.
