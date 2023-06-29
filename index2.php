@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>Flappy Cubird</title>
-	<!-- manuel3g -->
+	
 	<link rel="icon" href="https://logodownload.org/wp-content/uploads/2017/06/bitcoin-logo-1-1.png">
-	<!-- manuel3g -->
+	
     <link rel="stylesheet" href="css/styles.css?version=0.1">
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" /> 
