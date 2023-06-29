@@ -68,13 +68,13 @@
 					</button>
 				  </td>
 				</tr>
-				<tr>
+				<!--tr>
 				  <td>
 					<button class="play_again" id="payInvoice">
 						Pay invoice
 					</button>
 				  </td>
-				</tr>
+				</tr-->
 			  </tfoot>
 			</table>
 			<center>

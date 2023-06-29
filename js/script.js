@@ -28,7 +28,7 @@ document.addEventListener('click', (e) =>
 		if (isEventInElement(e, playAgain))
 		{
 			$('#showQRcode').show();
-			$('#payInvoice').hide();
+			//$('#payInvoice').hide();
 			$('.highscores').hide();
 			initGame(e);
 		}
@@ -38,12 +38,13 @@ document.addEventListener('click', (e) =>
 		{
 			showQRcode(e);
 		}
-		
+		/**
 		let payInvoice = document.querySelector('#payInvoice')
 		if (isEventInElement(e, payInvoice))
 		{
 			payInvoice(e);
 		} 
+		**/
 	}
 	else if (game_state != 'Play')
 	{
@@ -131,10 +132,8 @@ function gameOver()
 	{
 		getInvoice: true,
 		score: score,
-		port: '8082',
-		player: 'bob'
-		//port: port,
-		//player: player
+		port: port,
+		player: player
 	},
 	function(data, status)
 	{
@@ -150,17 +149,15 @@ function showQRcode(e)
 	{
 		showQRcode: true,
 		score: score,
-		port: '8082',
-		player: 'bob'
-		//port: port,
-		//player: player
+		port: port,
+		player: player
 	},
 	function(data, status)
 	{
 		document.querySelector('#table_body').innerHTML = '<tr><td>'+ data +'</td></tr>';
 		
 		$('#showQRcode').hide();
-		$('#payInvoice').show();
+		//$('#payInvoice').show();
 	});
 }
 
@@ -223,11 +220,12 @@ function play()
 	requestAnimationFrame(apply_gravity);
 }
 
+// TODO: pay invoice directly from game
 function payInvoice(e)
 {
 	alert('Invoice paid');
 	document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">paying invoice...</textarea></td></tr>';
-	/*
+	
 	$.post(handler,
 	{
 		payInvoice: true,
@@ -238,7 +236,6 @@ function payInvoice(e)
 		document.querySelector('#table_body').innerHTML = '<tr><td><textarea rows="12" cols="21">'+ data +'</textarea></td></tr>';
 		document.querySelector('#table_foot').innerHTML = '';
 	});
-	*/
 }
 
 function isEventInElement(event, element)
