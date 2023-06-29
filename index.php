@@ -1,68 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Flappy Cubird</title>
-    <link rel="stylesheet" href="css/styles.css?version=0.1">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" /> 
-	<meta http-equiv="Expires" content="0" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js" integrity="sha256-bu/BP02YMudBc96kI7yklc639Mu4iKGUNNcam8D2nLc=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js" integrity="sha256-Z3MmjesRY6rcd+sYj8tTwb/+EV/4msqGW7EZiQc3TK8=" crossorigin="anonymous"></script>
-	<script src="js/form.js?version=0.2"></script>
+    <title>Flappy Cubird</title>
+	<!-- manuel3g -->
+	<link rel="icon" href="https://logodownload.org/wp-content/uploads/2017/06/bitcoin-logo-1-1.png">
+	<!-- manuel3g -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
-<body>
-    <div class="background"></div>
-	<div class="game_holder">
-		<div class="game_title">
-			<img class="logo" src="images/game-logo.png" alt="Flappy M">
+<body style="display: flex; align-items: center; height: 100vh; background-color: #0c273a;">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-4">
+			
+				<form action="index2.php" method="POST">
+					<h3 style="color:white;">Enter your data<br>to start the game</h3>
+					<br>
+					<div class="mb-3">
+						<!-- <label for="nombre" class="form-label">Nombre</label> -->
+						<input class="form-control" type="text" name="player" placeholder="Type your name" aria-label="default input" required>
+					</div>
+					<div class="mb-3">
+						<!-- <label for="puerto" class="form-label">Puerto</label> -->
+						<input class="form-control" type="text" name="port" placeholder="Type your port" aria-label="default input" required>
+					</div>
+					<button type="submit" class="btn btn-success" style="width: 100%;">Iniciar</button>
+				</form>
+
+			</div>
+			<div class="col"></div>
 		</div>
-		<img class="bird" src="images/logo.png" alt="bird-img">
-		<div class="tap_image">
-			<img class="tap" src="images/tap.png" alt="bird-img">
-		</div>
-		<div class="message">
-			Tap to start the game
-		</div>
-		<div class="scoreHolder">
-			<div id="score_title"></div>
-			<span class="score"></span>
-		</div>
-		<div class="highscores">
-			<table>
-				<thead>
-					<tr>
-						<th colspan="2">Invoice</th>
-					</tr>
-				</thead>
-				<tbody id="table_body">
-					
-				</tbody>
-				<tfoot id="table_foot">
-				<tr>
-				  <td>
-					<button class="play_again" id="showQRcode">
-						Show QR
-					</button>
-				  </td>
-				</tr>
-				<tr>
-				  <td>
-					<button class="play_again" id="payInvoice">
-						Pay invoice
-					</button>
-				  </td>
-				</tr>
-			  </tfoot>
-			</table>
-			<center>
-				<button class="play_again" id="playAgain">
-					Play again
-				</button>
-			</center>
-		</div>
-		<script src="js/script.js"></script>
-	</div>
+	</div>	
 </body>
 </html>

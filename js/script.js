@@ -16,8 +16,8 @@ var invoice = '';
 
 $('#payInvoice').hide();
 // manuel3g
-//var nombre = document.getElementById("nombre_usuario").innerText;
-//var puerto = document.getElementById("puerto").innerText;
+var player = document.getElementById("player").innerText;
+var port = document.getElementById("port").innerText;
 // manuel3g
 
 document.addEventListener('click', (e) => 
@@ -68,7 +68,7 @@ function initGame(e)
 	message.innerHTML = '';
 
 	//manuel3g
-	//score_title.innerHTML = 'SCORE | '+ nombre + ' / ' + puerto;
+	//score_title.innerHTML = 'SCORE | '+ player + ' / ' + port;
 	score_title.innerHTML = 'SCORE';
 	//manuel3g
 	
@@ -133,6 +133,8 @@ function gameOver()
 		score: score,
 		port: '8082',
 		player: 'bob'
+		//port: port,
+		//player: player
 	},
 	function(data, status)
 	{
@@ -150,6 +152,8 @@ function showQRcode(e)
 		score: score,
 		port: '8082',
 		player: 'bob'
+		//port: port,
+		//player: player
 	},
 	function(data, status)
 	{
