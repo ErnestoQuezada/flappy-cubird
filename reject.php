@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Rejected|| Flappy Cubird</title>
-    <link rel="icon" href="https://logodownload.org/wp-content/uploads/2017/06/bitcoin-logo-1-1.png">
+    <link rel="icon" href="images/bitcoin-logo.png">
     <style>
         *, *::after, *::before {
             margin: 0;
@@ -78,7 +78,8 @@
     </main>
 
     <script>
-        function goBack() {
+        function goBack() 
+		{
             window.location.replace('./payinvoice.html')
         }
     </script>

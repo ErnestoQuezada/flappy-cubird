@@ -1,30 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flappy Cubird</title>
+<title>Flappy Cubird</title>
+	
 	<link rel="icon" href="images/bitcoin-logo.png">
     <link rel="stylesheet" href="css/styles.css?version=0.1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js" integrity="sha256-bu/BP02YMudBc96kI7yklc639Mu4iKGUNNcam8D2nLc=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js" integrity="sha256-Z3MmjesRY6rcd+sYj8tTwb/+EV/4msqGW7EZiQc3TK8=" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container-fluid h-100 text-center form">
-		<div class="row h-100 align-items-center">
-			<div class="col"></div>
-			<div class="col-4 align-self-center">
-				<form action="index2.php" method="POST">
-					<h3>Enter your data<br>to start the game</h3>
-					<br>
-					<div class="mb-3">
-						<input class="form-control" type="text" name="player" placeholder="Type your name" aria-label="default input" required>
-					</div>
-					<div class="mb-3">
-						<input class="form-control" type="text" name="port" placeholder="Type your port" aria-label="default input" required>
-					</div>
-					<button type="submit" class="btn btn-success mb-3">Play Game</button>
-				</form>
-			</div>
-			<div class="col"></div>
+    <div class="background"></div>
+	<div class="game_holder">
+		<div class="game_title">
+			<img class="logo" src="images/game-logo.png" alt="Flappy M">
 		</div>
-	</div>	
+		<img class="bird" src="images/logo.png" width="80" height="80" alt="bird-img">
+		<div class="tap_image">
+			<img class="tap" src="images/tap.png" alt="tap-img">
+		</div>
+		<div class="message">
+			Tap to start the game
+		</div>
+		<div class="scoreHolder">
+			<div id="score_title"></div>
+			<span class="score"></span>
+		</div>
+		<div class="highscores">
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">Invoice</th>
+					</tr>
+				</thead>
+				<tbody id="table_body">
+					
+				</tbody>
+				<tfoot id="table_foot">
+				<tr>
+				  <td>
+					<button class="play_again" id="showQRcode">
+						Show QR
+					</button>
+				  </td>
+				</tr>
+				<!--tr>
+				  <td>
+					<button class="play_again" id="payInvoice">
+						Pay invoice
+					</button>
+				  </td>
+				</tr-->
+			  </tfoot>
+			</table>
+			<center>
+				<button class="play_again" id="playAgain">
+					Play again
+				</button>
+			</center>
+		</div>
+		<script src="js/script.js"></script>
+	</div>
 </body>
 </html>

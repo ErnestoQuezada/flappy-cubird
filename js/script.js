@@ -15,10 +15,6 @@ let background = document.querySelector('.background').getBoundingClientRect();
 var invoice = '';
 
 $('#payInvoice').hide();
-// manuel3g
-var player = document.getElementById("player").innerText;
-var port = document.getElementById("port").innerText;
-// manuel3g
 
 document.addEventListener('click', (e) => 
 {
@@ -67,11 +63,7 @@ function initGame(e)
 	bird.style.top = '40vh';
 	game_state = 'Play';
 	message.innerHTML = '';
-
-	//manuel3g
-	//score_title.innerHTML = 'SCORE | '+ player + ' / ' + port;
 	score_title.innerHTML = 'SCORE';
-	//manuel3g
 	
 	scoreString.innerHTML = score;
 	play();
@@ -131,9 +123,7 @@ function gameOver()
 	$.post(handler,
 	{
 		getInvoice: true,
-		score: score,
-		port: port,
-		player: player
+		score: score
 	},
 	function(data, status)
 	{
@@ -148,9 +138,7 @@ function showQRcode(e)
 	$.post(handler,
 	{
 		showQRcode: true,
-		score: score,
-		port: port,
-		player: player
+		score: score
 	},
 	function(data, status)
 	{
@@ -191,7 +179,7 @@ function create_pipe()
 	
 	if (pipe_seperation > 115)
 	{
-		pipe_seperation = 0
+		pipe_seperation = 0;
 
 		let pipe_posi = Math.floor(Math.random() * 43) + 8;
 		let pipe_sprite_inv = document.createElement('div');
